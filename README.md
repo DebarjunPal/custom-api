@@ -415,7 +415,7 @@ The API implements comprehensive error handling for:
 ### Environment Variables for Production
 ```env
 PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanagement
+MONGODB_URI
 NODE_ENV=production
 ```
 
