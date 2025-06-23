@@ -360,6 +360,25 @@ async function runAllTests() {
 
     // CRUD tests for users
     createdUserId = await testCreateUser();
-    if (createdUserId) {
-      await testUpdateUser(createdUserId);
+        if (createdUserId) {
+          await testUpdateUser(createdUserId);
+        }
+    
+        // Additional tests
+        if (createdTaskId) {
+          await testTaskFiltering();
+          await testDeleteTask(createdTaskId);
+        }
+        if (createdUserId) {
+          await testDeleteUser(createdUserId);
+        }
+    
+        await testErrorHandling();
+    
+        console.log('\n🎉 All tests completed!');
+      } catch (err) {
+        console.error('❌ Test runner error:', err);
+      }
     }
+    
+    runAllTests();
